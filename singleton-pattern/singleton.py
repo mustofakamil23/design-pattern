@@ -8,3 +8,16 @@ class Singleton:
             Singleton.__instance__ = self
         else:
             raise Exception("We can not create another class")
+
+        
+        @staticmethod
+        def get_instance():
+            # we defined a static method to fetch instance
+            if not Singleton.__instance__:
+                Singleton()
+            return Singleton.__instance__
+        
+
+# Creating an object
+single = Singleton()
+print(single)
